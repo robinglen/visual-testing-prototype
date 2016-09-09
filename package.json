@@ -1,0 +1,35 @@
+{
+  "name": "visual-testing-prototype",
+  "version": "0.0.1",
+  "description": "Prototype for comparing webpage layouts across browsers",
+  "main": "src/server",
+  "scripts": {
+    "postinstall": "node_modules/selenium-standalone/bin/selenium-standalone install",
+    "start": "npm run server",
+    "server": "node src/server.js",
+    "selenium": "node_modules/selenium-standalone/bin/selenium-standalone start",
+    "screenshot": "node_modules/.bin/concurrently -k 'npm start' 'npm run selenium' 'npm run screenshot:driver'",
+    "screenshot:driver": "node src/screenshot-driver.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thearegee/visual-testing-prototype.git"
+  },
+  "keywords": [
+    "images",
+    "testing"
+  ],
+  "author": "Robin Glen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thearegee/visual-testing-prototype/issues"
+  },
+  "homepage": "https://github.com/thearegee/visual-testing-prototype#readme",
+  "dependencies": {
+    "concurrently": "^2.2.0",
+    "express": "^4.14.0",
+    "selenium-standalone": "^5.6.3",
+    "webdriverio": "^4.2.11"
+  }
+}
