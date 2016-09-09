@@ -10,6 +10,7 @@
     "selenium": "node_modules/selenium-standalone/bin/selenium-standalone start",
     "screenshot": "node_modules/.bin/concurrently -k 'npm start' 'npm run selenium' 'npm run screenshot:driver'",
     "screenshot:driver": "node src/screenshot-driver.js",
+    "screenshot:comparison": "node src/screenshot-comparison.js",
     "test": "npm test"
   },
   "repository": {
@@ -29,6 +30,7 @@
   "dependencies": {
     "concurrently": "^2.2.0",
     "express": "^4.14.0",
+    "node-resemble-js": "^0.1.1",
     "selenium-standalone": "^5.6.3",
     "webdriverio": "^4.2.11"
   }

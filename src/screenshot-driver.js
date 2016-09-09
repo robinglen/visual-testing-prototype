@@ -13,10 +13,8 @@ function getScreenshot() {
     console.log('Getting screenshot');
     webdriverio.remote(options)
         .init()
+        .windowHandleSize({width: 1366, height: 768})
         .url(url)
-        .getTitle().then(function(title) {
-            console.log('Title was: ' + title);
-        })
-        .saveScreenshot('/screenshot/snapshot.png')
+        .saveScreenshot('./snapshots/snapshot.png')
         .end();
 }
